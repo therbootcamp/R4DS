@@ -110,7 +110,7 @@ You have the basics of R and the tidyverse down!
 
 # <mono>tidyverse</mono> extended
 
-Many packages built on [<mono>tidyverse</mono>](https://www.tidyverse.org/) principles to offer <high>high-performance tools for many other tasks</high>. 
+Many packages build on [<mono>tidyverse</mono>](https://www.tidyverse.org/) principles to offer <high>high-performance tools for many other tasks</high>. 
 
 ]
 
