@@ -3,7 +3,6 @@
 @import url(https://fonts.googleapis.com/icon?family=Material+Icons);
 @import url(https://fonts.googleapis.com/icon?family=Montserrat:100,400);
 
-
 :root {
   font-size: 62.5%;
   body {
@@ -22,7 +21,7 @@
  margin-left: calc(-50vw + 50%);
  margin-right: calc(-50vw + 50%);
  margin-top: -20px;
- font-family: Montserrat;
+ font-family: 'Montserrat';
 
 }
 
@@ -87,13 +86,12 @@ h2 {
   margin-bottom: 20px;
   }
 
-.my-table th {
+.my-table .time {
   font-size:.7em;
   font-weight:100;
-  width: 100;
   text-align: right;
   vertical-align: top;
-  padding: 6px 6px 6px 0px;
+  padding: 6px 0px 6px 0px;
   }
 
 .my-table td {
@@ -102,7 +100,10 @@ h2 {
   padding: 6px 0px 6px 6px;
   border-radius:8px;
   height: 40px;
-  min-width: 260px;
+  }
+
+.my-table img {
+  height: 20px;
 }
 
 .td-special {
@@ -155,7 +156,7 @@ a {
 }
 
 .cont {
-  font-weight:400;
+        font-weight:400;
 	font-size:10px;
 	line-height: 1.1;
     margin-top: 4px;
@@ -167,11 +168,15 @@ r {color: #FF3A2A;}
 
 .my-table a {
   color: white;
-  font-weight: 900;
+  font-weight: 100;
   }
 
 .my-table a:hover {
   color: white;
+}
+
+el {
+  font-size: .8em;
 }
 
 .downloads h4 {
@@ -218,31 +223,11 @@ r {color: #FF3A2A;}
 }
 
 
-
-.partner-img {
-  max-height: 150px;
-}
-
-.xlogo {
-  /*float:right;*/
-  padding: 10px 10px 30px 30px;
-  max-width:280px;
-  max-height:180px;
-  width: auto;
-  height: auto;
-}
+.details td {
+  font-family: Montserrat;
+  color: #212529;
+  font-weight: 400;
+  margin-bottom: 11px;
+  }
 
 
-.logo {
-  padding: 20px;
-  max-width:230px;
-  max-height:120px;
-  width: auto;
-  height: auto;
-}
-
-.partners td {
-
-  padding-bottom:20px;
-
-}
