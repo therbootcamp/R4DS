@@ -1,0 +1,428 @@
+---
+title: "Next steps"
+author: "Visualizing and communicating data with R<br>
+  <a href='https://therbootcamp.github.io'>
+    <font style='font-size:1em'>The R Bootcamp @ GSERM</font>
+  </a>
+  <br>
+  <a href='https://therbootcamp.github.io/DataViz_2022GSERM/'>
+    <i class='fas fa-clock' style='font-size:1em;'></i>
+  </a>&#8239; 
+  <a href='https://therbootcamp.github.io'>
+    <i class='fas fa-home' style='font-size:1em;' ></i>
+  </a>&#8239;
+  <a href='therbootcamp@gmail.com'>
+    <i class='fas fa-envelope' style='font-size: 1em;'></i>
+  </a>&#8239;
+  <a href='https://www.linkedin.com/company/27090302'>
+    <i class='fab fa-linkedin' style='font-size: 1em;'></i>
+  </a>"
+date: "June 2022"
+output:
+  xaringan::moon_reader:
+    css: ["default", "baselrbootcamp.css"]
+    lib_dir: libs
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+      ratio: '16:9'
+---
+
+layout: true
+
+<div class="my-footer">
+  <span style="text-align:center">
+    <span> 
+      <img src="https://raw.githubusercontent.com/therbootcamp/therbootcamp.github.io/master/_sessions/_image/by-sa.png" height=14 style="vertical-align: middle"/>
+    </span>
+    <a href="https://therbootcamp.github.io/">
+      <span style="padding-left:82px"> 
+        <font color="#7E7E7E">
+          https://therbootcamp.github.io
+        </font>
+      </span>
+    </a>
+    <a href="https://therbootcamp.github.io/">
+      <font color="#7E7E7E">
+      R for Data Science | June 2022
+      </font>
+    </a>
+    </span>
+  </div> 
+
+---
+
+```{r setup, include=FALSE}
+# see: https://github.com/yihui/xaringan
+# install.packages("xaringan")
+# see: 
+# https://github.com/yihui/xaringan/wiki
+# https://github.com/gnab/remark/wiki/Markdown
+options(width=110)
+options(digits = 4)
+```
+
+
+.pull-left45[
+
+<br><br><br><br><br>
+
+# Congrats!
+
+You have the basics of R and the tidyverse down!
+
+]
+
+.pull-right4[
+
+<img src="image/schedule.png" height="580" align="center" style="padding-top:16px">
+]
+
+---
+
+.pull-left5[
+
+# R can do more
+
+<font size = 6>
+
+1. <mono>tidyverse</mono> extended<br>
+2. Reporting<br>
+3. Statistics<br>
+4. Machine learning<br>
+
+</font>
+
+
+]
+
+
+
+.pull-right5[
+<br><br>
+<p align="center"><img border="0" alt="W3Schools" src="image/artr.jpeg" height="460px"></p>
+]
+
+---
+
+.pull-left3[
+
+# <mono>tidyverse</mono> extended
+
+Many packages built on [<mono>tidyverse</mono>](https://www.tidyverse.org/) principles to offer <high>high-performance tools for many other tasks</high>. 
+
+]
+
+.pull-right65[
+<br><br>
+<p align="center"><img border="0" alt="W3Schools" src="image/wall.png" height="520px"></p>
+
+]
+
+---
+
+# Web scraping with <mono>rvest</mono> <img src="https://github.com/rstudio/hex-stickers/raw/master/PNG/rvest.png" height=60px />
+
+```{r, echo = F, message=F}
+options(tibble.print_max = 6, tibble.width=90)
+library(xml2) ; library(rvest) ; library(tibble)
+```
+
+```{r, message=F}
+# load table from Wikipedia
+read_html("https://en.wikipedia.org/wiki/R_(programming_language)") %>%
+  html_node(xpath = '//*[@id="mw-content-text"]/div[1]/table[2]') %>%
+  html_table() %>% as_tibble()
+```
+
+
+---
+
+# Text analysis with <mono>tidytext</mono> <img src="https://pbs.twimg.com/media/DeacLnGU0AAlmS9.png" height=60px />
+
+.pull-left5[
+
+```{r, message=F, eval=F}
+library(tidytext) ; library(wordcloud)
+library(dplyr) ; library(stringr)
+
+# Count words
+counts <- 
+  read_html(".../R_(programming_language)") %>%
+  html_text() %>%
+  tibble() %>%
+  unnest_tokens(w, ".") %>%
+  filter(!str_detect(w, '[:digit:]')) %>%
+  anti_join(stop_words) %>%
+  count(word, sort = TRUE) %>%
+  top_n(100) 
+
+# Wordcloud
+wordcloud(counts$word, 
+          counts$n)
+  
+```
+
+]
+
+.pull-right4[
+
+```{r, message=F, warning=F, echo=F, fig.width=5,fig.height=5,dpi=300}
+library(dplyr) ; library(tidytext) ; library(wordcloud) ; library(stringr)
+
+# Count words
+counts <- 
+  read_html("https://en.wikipedia.org/wiki/R_(programming_language)") %>%
+  html_text() %>%
+  tibble() %>%
+  unnest_tokens(word, ".") %>%
+  filter(!str_detect(word, '[:digit:]')) %>%
+  anti_join(stop_words %>% bind_rows(tibble(word = 'retrieved', lexicon = ''))) %>%
+  count(word, sort = TRUE) %>%
+  top_n(100) 
+
+# Wordcloud
+par(mar=c(0,0,0,0))
+wordcloud(counts$word, 
+          counts$n)
+  
+```
+
+]
+
+---
+
+# Reporting with analysis with <mono>rmarkdown</mono> <img src="https://raw.githubusercontent.com/rstudio/hex-stickers/master/PNG/rmarkdown.png" height=60px />
+
+.pull-left45[
+
+<p align="left"><img style="height:440px" src="image/markdown.png"></p>
+]
+
+.pull-right5[
+
+<p align="center"><img style="height:440px;box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);" src="image/markdown2.png"></p>
+]
+
+---
+
+<iframe width="1000" height="600" src="https://vac-lshtm.shinyapps.io/ncov_tracker/?_ga=2.157815026.975657143.1601587486-2064892133.1598629448" frameborder="0" allowfullscreen></iframe>
+
+
+---
+
+# Statistics
+
+
+.pull-left45[
+
+```{r, message=F}
+library(tidyverse)
+
+# Lade Tourismus Daten
+tour <- read_csv('1_Data/Tourismus.csv')
+länd <- read_csv('1_Data/Länder.csv')                 
+
+# verbinde Daten
+data <- tour %>% 
+  inner_join(länd) %>%
+  mutate(Nächte = Besucher * Dauer)
+
+# Regressionsanalyse
+model = lm(Nächte ~ Bevölkerung + 
+                    Dichte + BIP,
+           data = data)
+```
+
+]
+
+.pull-right45[
+
+
+```{r, message=F, warning=F}
+# Bestimmtheitsmass
+summary(model)$r.squared
+```
+
+
+```{r, message=F, warning=F, echo=T, eval=F}
+# Koeffizienten
+summary(model)$coef[,-2]
+```
+
+```{r, message=F, warning=F, echo=F, eval=T}
+# Koeffizienten
+summary(model)$coef[,-2]
+```
+]
+
+---
+
+.pull-left45[
+
+# Machine learning
+
+```{r, message=F, eval=F}
+library(tidyverse) ; library(rpart)
+
+# Lade Tourismus Daten
+tour <- read_csv('1_Data/Tourismus.csv')
+länd <- read_csv('1_Data/Länder.csv')                 
+
+# verbinde Daten
+data <- tour %>% 
+  inner_join(länd) %>%
+  mutate(Nächte = Besucher * Dauer)
+
+# Regressionsanalyse
+rpart(
+  formula = Besucher ~ Bevölkerung + 
+                       Dichte + BIP,
+  data = data) 
+  
+```
+
+]
+
+.pull-right45[
+
+<br><br>
+
+```{r, message=F, warning=F, echo=F, fig.width=5,fig.height=5,dpi=300}
+library(tidyverse) ; library(rpart)
+library(rattle)
+
+# Lade Tourismus Daten
+tour <- read_csv('1_Data/Tourismus.csv')
+länd <- read_csv('1_Data/Länder.csv')                 
+
+# verbinde Daten
+data <- tour %>% 
+  inner_join(länd) %>%
+  mutate(Nächte = Besucher * Dauer)
+
+# Regressionsanalyse
+rpart(
+  formula = Besucher ~ Bevölkerung + 
+                       Dichte + BIP,
+  data = data,
+  control = rpart.control(cp = 0)) %>%
+  fancyRpartPlot(caption = '')
+```
+
+]
+
+---
+
+.pull-left45[
+
+# Machine learning 
+
+<ul>
+  <li class="m1"><span><mono>tidymodels</mono> is a new meta-package for tidy ML in R.</span></li>
+  <li class="m2"><span>Multiple packages span every important step of ML.</span></li>
+</ul>
+
+<br>
+<p align = "center">
+<img src="https://www.tidymodels.org/images/tidymodels.png" width=180px><br>
+<font style="font-size:10px">from <a href="https://www.tidymodels.org/packages/">tidymodels.org</a></font>
+</p>
+
+]
+
+.pull-right5[
+
+<p align = "center">
+<br>
+<img src="image/tidymodels.png" height=560px><br>
+</p>
+
+]
+
+
+---
+
+# Books  
+
+An incomplete list of useful books ordered according to topic and level of expertise.<br><br>
+
+<table width="80%" style="cellspacing:0; cellpadding:0; border:none;">
+
+  <tr>    
+
+  <td> 
+  <a href="http://r4ds.had.co.nz/"><img border="0" alt="W3Schools" src="http://r4ds.had.co.nz/cover.png" height="180"></a>
+  </td>
+
+  <td>
+  <a href="https://covers.oreillystatic.com/images/0636920028574/cat.gif"><img border="0" alt="W3Schools" src="https://covers.oreillystatic.com/images/0636920028574/cat.gif" height="180"></a>
+  </td>
+
+  <td> 
+  <a href="https://ggplot2-book.org/"><img border="0" alt="W3Schools" src="https://images-na.ssl-images-amazon.com/images/I/31uoy-qmhEL._SX331_BO1,204,203,200_.jpg" height="180"></a>
+  </td>
+
+  <td>
+  <a href="https://www.springer.com/de/book/9783540799979"><img border="0" alt="W3Schools" src="https://media.springernature.com/w306/springer-static/cover-hires/book/978-3-540-79998-6" height="180" ></a>
+  </td>
+  
+  <td>
+  <a href="https://bookdown.org/ndphillips/YaRrr/"><img border="0" alt="W3Schools" src="https://bookdown.org/ndphillips/YaRrr/images/YaRrr_Cover.jpg" height="180" ></a>
+  </td>
+  
+  <td>
+  <a href="https://www.orellfuessli.ch/shop/home/artikeldetails/ID35367941.html?ProvID=10917736&gclid=Cj0KCQiAg_HhBRDNARIsAGHLV5238Q26gQmFttHRnYGjcAhz4CslStb-3qBegvuZS5gnCpWSLNlQvF0aAgfOEALw_wcB"><img border="0" alt="W3Schools" src="https://assets.thalia.media/img/35367941-00-00.jpg" height="180" ></a>
+  </td>
+  
+  </tr>
+  
+
+  <tr style="background-color:#ffffff">
+
+  <td>
+  <a href="http://appliedpredictivemodeling.com/"><img border="0" alt="W3Schools" src="http://static1.squarespace.com/static/51156277e4b0b8b2ffe11c00/t/51157487e4b0b8b2ffe16829/1509217882069/?format=1500w" height="180" ></a>
+  </td>
+  
+  <td>
+  <a href="http://www-bcf.usc.edu/~gareth/ISL/ISLR%20First%20Printing.pdf"><img border="0" alt="W3Schools" src="https://images-na.ssl-images-amazon.com/images/I/41EaH4W9LVL._SX332_BO1,204,203,200_.jpg" height="180" ></a>
+  </td>
+  
+  <td>
+  <a href="https://www.manning.com/books/deep-learning-with-r"><img border="0" alt="W3Schools" src="https://images-na.ssl-images-amazon.com/images/I/51h5d4dYaoL._SX396_BO1,204,203,200_.jpg" height="180" ></a>
+  </td>
+
+
+  <td>
+  <a href="https://csgillespie.github.io/efficientR/"><img border="0" alt="W3Schools" src="https://csgillespie.github.io/efficientR/figures/f0_web.png" height="180" ></a>
+  </td>
+
+  <td>
+  <a href="www.rcpp.org/"><img border="0" alt="W3Schools" src="https://images-na.ssl-images-amazon.com/images/I/31Y8QSFEMJL._SX328_BO1,204,203,200_.jpg" height="180" ></a>
+  </td>
+  
+  
+  <td>
+  <a href="http://adv-r.had.co.nz/"><img border="0" alt="W3Schools" src="https://images-na.ssl-images-amazon.com/images/I/41RJLhZ32VL._SX329_BO1,204,203,200_.jpg" height="180" ></a>
+  </td>
+
+
+  </tr>
+  
+</table>
+<br>
+  
+---
+class: center, middle
+
+<table class="tg"  style="cellspacing:0; cellpadding:0; border:none; width=100%">
+<tr>
+<td>
+<img src="image/sticker.png" height=280px></img>
+</td>
+<td>
+<font style="font-size:80px;font-family:'Yanone Kaffeesatz'">Thank you!</font>
+</td>
+</tr>
+</table>

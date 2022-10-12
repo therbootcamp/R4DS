@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+  <head>
+    <title>Welcome!</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="R for Data Science   The R Bootcamp @ Psych                  " />
+    <script src="libs/header-attrs/header-attrs.js"></script>
+    <link href="libs/remark-css/default.css" rel="stylesheet" />
+    <link rel="stylesheet" href="baselrbootcamp.css" type="text/css" />
+  </head>
+  <body>
+    <textarea id="source">
+class: center, middle, inverse, title-slide
+
+.title[
+# Welcome!
+]
+.author[
+### R for Data Science<br> <a href='https://therbootcamp.github.io'> <font style='font-size:1em'>The R Bootcamp @ Psych</font> </a> <br> <a href='https://therbootcamp.github.io/R4DS_2022Oct/'> <i class='fas fa-clock' style='font-size:1em;'></i> </a>  <a href='https://therbootcamp.github.io'> <i class='fas fa-home' style='font-size:1em;' ></i> </a>  <a href='therbootcamp@gmail.com'> <i class='fas fa-envelope' style='font-size: 1em;'></i> </a>  <a href='https://www.linkedin.com/company/27090302'> <i class='fab fa-linkedin' style='font-size: 1em;'></i> </a>
+]
+.date[
+### October 2022
+]
+
+---
+
+
+layout: true
+
+&lt;div class="my-footer"&gt;
+  &lt;span style="text-align:center"&gt;
+    &lt;span&gt; 
+      &lt;img src="https://raw.githubusercontent.com/therbootcamp/therbootcamp.github.io/master/_sessions/_image/by-sa.png" height=14 style="vertical-align: middle"/&gt;
+    &lt;/span&gt;
+    &lt;a href="https://therbootcamp.github.io/"&gt;
+      &lt;span style="padding-left:82px"&gt; 
+        &lt;font color="#7E7E7E"&gt;
+          https://therbootcamp.github.io
+        &lt;/font&gt;
+      &lt;/span&gt;
+    &lt;/a&gt;
+    &lt;a href="https://therbootcamp.github.io/"&gt;
+      &lt;font color="#7E7E7E"&gt;
+      R for Data Science | October 2022
+      &lt;/font&gt;
+    &lt;/a&gt;
+    &lt;/span&gt;
+  &lt;/div&gt; 
+
+---
+
+
+
+
+&lt;!---
+
+.pull-left45[
+&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;
+# Materialien
+
+Klicke auf &lt;high&gt;"....running..."&lt;/high&gt; auf unserer Website!
+
+&lt;font style="font-size:28px"&gt;&lt;a href="www.therbootcamp.com"&gt;&lt;b&gt;www.therbootcamp.com&lt;/b&gt;&lt;/a&gt;&lt;/font&gt;
+
+]
+
+.pull-right5[
+
+&lt;br&gt;&lt;br&gt;
+&lt;iframe src="https://therbootcamp.github.io" width="500" height="500"&gt;&lt;/iframe&gt;
+
+]
+
+---&gt;
+
+.pull-left6[
+
+&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;
+
+
+# Goal
+
+
+&gt;### The goal of this workshop is to introduce you to R's tools for data visualization and communication and how they can be used to effectively communicate insights from data!
+
+]
+
+.pull-right4[
+
+&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;
+&lt;p align="center"&gt;&lt;img src="https://raw.githubusercontent.com/therbootcamp/therbootcamp.github.io/master/_sessions/_image/target.png" height="350"&gt;&lt;/p&gt;
+
+]
+
+
+---
+
+.pull-left45[
+
+&lt;br&gt;
+# Schedule 
+
+&lt;ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;Core of the workshop consists of 6 sessions on R. Each session is structured into:&lt;/span&gt;&lt;/li&gt;
+  &lt;ul class="level"&gt;
+    &lt;li&gt;&lt;span&gt;30-60min introduction&lt;/high&gt;&lt;/span&gt;&lt;/li&gt; 
+    &lt;li&gt;&lt;span&gt;30-60min coding exercises&lt;/span&gt;&lt;/li&gt; 
+    &lt;li&gt;&lt;span&gt;5-10min Q&amp;A&lt;/span&gt;&lt;/li&gt; 
+  &lt;/ul&gt;
+  &lt;li class="m2"&gt;&lt;span&gt;Additional sessions &amp; afternoon assignments to advance your visualization project.&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+]
+
+.pull-right5[
+&lt;br&gt;&lt;br&gt;&lt;br&gt;
+&lt;img src="image/schedule.png" align="center" style="padding-top:16px"&gt;
+
+]
+
+---
+
+.pull-left3[
+
+# Inequality in Basel
+
+&lt;font style="font-size:28px"&gt;&lt;high&gt;&lt;i class="far fa-question-circle"&gt;&lt;/i&gt;&lt;/high&gt; How has the distribution of income and wealth changed within and between Basel's quarters from 2001 and 2017?&lt;/i&gt;&lt;/font&gt;
+
+&lt;br&gt;
+
+&lt;p align="center"&gt;
+&lt;img src="image/basel_open_data.png" height=220px&gt;
+&lt;/p&gt;
+
+]
+
+.pull-right6[
+
+&lt;br&gt;
+
+&lt;p align="center"&gt;
+&lt;img src="image/quarters.png" height=540px&gt;
+&lt;/p&gt;
+
+]
+
+---
+
+.pull-left3[
+
+# Inequality in Basel
+
+&lt;font style="font-size:28px"&gt;&lt;high&gt;&lt;i class="far fa-question-circle"&gt;&lt;/i&gt;&lt;/high&gt; How has the distribution of income and wealth changed within and between Basel's quarters from 2001 and 2017?&lt;/i&gt;&lt;/font&gt;
+
+&lt;br&gt;
+
+&lt;p align="center"&gt;
+&lt;img src="image/basel_open_data.png" height=220px&gt;
+&lt;/p&gt;
+
+]
+
+.pull-right6[
+
+&lt;br&gt;
+
+&lt;p align="center"&gt;
+&lt;img src="image/data.png" height=540px&gt;
+&lt;/p&gt;
+
+]
+
+
+
+
+---
+
+.pull-left3[
+
+# Mean, Median, Gini
+
+&lt;ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;Inequality arising from a &lt;high&gt;rich-get-richer&lt;/high&gt; dynamic materializes as an increasingly right-skewed income distribution.&lt;/span&gt;&lt;/li&gt;&lt;br&gt;
+  &lt;li class="m2"&gt;&lt;span&gt;This can be detected:&lt;/span&gt;&lt;/li&gt;&lt;br&gt;
+  &lt;ul class="level"&gt;
+    &lt;li&gt;&lt;span&gt;&lt;high&gt;Mean&lt;/high&gt; income grows faster than &lt;high&gt;median&lt;/high&gt; income.&lt;/span&gt;&lt;/li&gt;&lt;br&gt;
+    &lt;li&gt;&lt;span&gt;The &lt;high&gt;Gini&lt;/high&gt; coefficient goes up.&lt;/span&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/ul&gt;
+
+]
+
+
+.pull-right65[
+&lt;br&gt;
+&lt;p align="center"&gt;
+&lt;img src="image/distr.gif" width="360px"&gt;&lt;br&gt;
+&lt;img src="image/gini.gif" width="360px"&gt;
+&lt;/p&gt;
+]
+
+---
+
+.pull-left3[
+
+# Mean, Median, Gini
+
+&lt;ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;Inequality arising from a &lt;high&gt;rich-get-richer&lt;/high&gt; dynamic materializes as an increasingly right-skewed income distribution.&lt;/span&gt;&lt;/li&gt;&lt;br&gt;
+  &lt;li class="m2"&gt;&lt;span&gt;This can be detected:&lt;/span&gt;&lt;/li&gt;&lt;br&gt;
+  &lt;ul class="level"&gt;
+    &lt;li&gt;&lt;span&gt;&lt;high&gt;Mean&lt;/high&gt; income grows faster than &lt;high&gt;median&lt;/high&gt; income.&lt;/span&gt;&lt;/li&gt;&lt;br&gt;
+    &lt;li&gt;&lt;span&gt;The &lt;high&gt;Gini&lt;/high&gt; coefficient goes up.&lt;/span&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/ul&gt;
+
+]
+
+
+.pull-right65[
+&lt;br&gt;
+&lt;p align="center"&gt;
+&lt;img src="image/distr.gif" width="360px"&gt;&lt;br&gt;
+&lt;img src="image/gini.gif" width="360px"&gt;
+&lt;/p&gt;
+]
+
+
+---
+
+# Introductions
+
+.pull-left35[
+
+&lt;ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;What is your name?&lt;/span&gt;&lt;/li&gt;&lt;br&gt;
+  &lt;li class="m2"&gt;&lt;span&gt;Where are you from?&lt;/span&gt;&lt;/li&gt;&lt;br&gt;
+  &lt;li class="m3"&gt;&lt;span&gt;How much experience do you have with R?&lt;/span&gt;&lt;/li&gt;&lt;br&gt;
+  &lt;li class="m4"&gt;&lt;span&gt;What is your goal behind wanting to learn data visualization with R?&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+]
+
+.pull-right55[
+
+&lt;p align="center"&gt;
+&lt;img src="image/hello.jpg"&gt;
+&lt;br&gt;
+&lt;font style="font-size:10px"&gt;from &lt;a href="https://unsplash.com/photos/3MYvgsH1uK0"&gt;unsplash.com&lt;/a&gt;&lt;/font&gt;
+&lt;/p&gt;
+
+]
+
+---
+
+# RStudio
+
+.pull-left3[
+
+&lt;ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;RStudio is...&lt;/span&gt;&lt;/li&gt;&lt;br&gt;
+  &lt;ul class="level"&gt;
+    &lt;li&gt;&lt;span&gt;A high-productivity &lt;high&gt;data science IDE.&lt;/high&gt;&lt;/span&gt;&lt;/li&gt;&lt;br&gt;
+    &lt;li&gt;&lt;span&gt;The &lt;high&gt;company&lt;/high&gt; behind the tidyverse.&lt;/span&gt;&lt;/li&gt;&lt;br&gt;
+    &lt;li&gt;&lt;span&gt;Designed for R tidyverse with &lt;high&gt;good integration&lt;/high&gt; for Python, Markdown, or C++.&lt;/span&gt;&lt;/li&gt;&lt;br&gt;
+  &lt;/ul&gt;
+&lt;/ul&gt;
+
+]
+
+.pull-right6[
+&lt;p align="center"&gt;
+&lt;img src="image/rstudio.png"&gt;
+&lt;/p&gt;
+]
+
+---
+
+# RStudio
+
+.pull-left3[
+
+&lt;ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;RStudio is...&lt;/span&gt;&lt;/li&gt;&lt;br&gt;
+  &lt;ul class="level"&gt;
+    &lt;li&gt;&lt;span&gt;A high-productivity &lt;high&gt;data science IDE.&lt;/high&gt;&lt;/span&gt;&lt;/li&gt;&lt;br&gt;
+    &lt;li&gt;&lt;span&gt;The &lt;high&gt;company&lt;/high&gt; behind the tidyverse.&lt;/span&gt;&lt;/li&gt;&lt;br&gt;
+    &lt;li&gt;&lt;span&gt;Designed for R tidyverse with &lt;high&gt;good integration&lt;/high&gt; for Python, Markdown, or C++.&lt;/span&gt;&lt;/li&gt;&lt;br&gt;
+  &lt;/ul&gt;
+&lt;/ul&gt;
+
+]
+
+.pull-right5[
+
+&lt;p align = "left"&gt;
+  &lt;img src="image/editor_edit.png"&gt;
+&lt;br&gt;&lt;br&gt;&lt;br&gt;
+Shortcut for &lt;high&gt;send Code to Console&lt;/high&gt;:&lt;br&gt;&lt;br2&gt;&lt;font size = 6&gt;&amp;#8984;/ctrl + &amp;#9166;&lt;/font&gt;&lt;br&gt;&lt;br2&gt;&lt;br2&gt;
+Shortcut for &lt;high&gt;run Chunk again&lt;/high&gt;:&lt;br&gt;&lt;br2&gt;&lt;font size = 6&gt;  &amp;#8984;/ctrl + &amp;#8997; + p&lt;/font&gt;
+&lt;/p&gt;
+
+]
+
+---
+
+# RStudio
+
+.pull-left3[
+
+&lt;ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;RStudio is...&lt;/span&gt;&lt;/li&gt;&lt;br&gt;
+  &lt;ul class="level"&gt;
+    &lt;li&gt;&lt;span&gt;A high-productivity &lt;high&gt;data science IDE.&lt;/high&gt;&lt;/span&gt;&lt;/li&gt;&lt;br&gt;
+    &lt;li&gt;&lt;span&gt;The &lt;high&gt;company&lt;/high&gt; behind the tidyverse.&lt;/span&gt;&lt;/li&gt;&lt;br&gt;
+    &lt;li&gt;&lt;span&gt;Designed for R tidyverse with &lt;high&gt;good integration&lt;/high&gt; for Python, Markdown, or C++.&lt;/span&gt;&lt;/li&gt;&lt;br&gt;
+  &lt;/ul&gt;
+&lt;/ul&gt;
+
+]
+
+.pull-right5[
+
+&lt;p align = "center"&gt;
+  &lt;img src="image/auto_complete_1.png"&gt;
+&lt;/p&gt;
+
+]
+
+---
+
+# RStudio
+
+.pull-left3[
+
+&lt;ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;RStudio is...&lt;/span&gt;&lt;/li&gt;&lt;br&gt;
+  &lt;ul class="level"&gt;
+    &lt;li&gt;&lt;span&gt;A high-productivity &lt;high&gt;data science IDE.&lt;/high&gt;&lt;/span&gt;&lt;/li&gt;&lt;br&gt;
+    &lt;li&gt;&lt;span&gt;The &lt;high&gt;company&lt;/high&gt; behind the tidyverse.&lt;/span&gt;&lt;/li&gt;&lt;br&gt;
+    &lt;li&gt;&lt;span&gt;Designed for R tidyverse with &lt;high&gt;good integration&lt;/high&gt; for Python, Markdown, or C++.&lt;/span&gt;&lt;/li&gt;&lt;br&gt;
+  &lt;/ul&gt;
+&lt;/ul&gt;
+
+]
+
+.pull-right5[
+
+&lt;p align = "left"&gt;
+  &lt;img src="image/folder_structure.png" height="340px"&gt;
+&lt;/p&gt;
+
+]
+
+
+---
+
+class: middle, center
+
+&lt;h1&gt;&lt;a href="https://www.dropbox.com/s/siwk0mqzr3dofc5/TheRBootcamp.zip?dl=1"&gt;Download&lt;br&gt;project&lt;/a&gt;&lt;/h1&gt;
+
+
+---
+
+class: middle, center
+
+&lt;h1&gt;&lt;a href="https://therbootcamp.github.io/DataViz_2022GSERM/"&gt;Schedule&lt;/a&gt;&lt;/h1&gt;
+
+
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"highlightStyle": "github",
+"highlightLines": true,
+"countIncrementalSlides": false,
+"ratio": "16:9"
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+// add `data-at-shortcutkeys` attribute to <body> to resolve conflicts with JAWS
+// screen reader (see PR #262)
+(function(d) {
+  let res = {};
+  d.querySelectorAll('.remark-help-content table tr').forEach(tr => {
+    const t = tr.querySelector('td:nth-child(2)').innerText;
+    tr.querySelectorAll('td:first-child .key').forEach(key => {
+      const k = key.innerText;
+      if (/^[a-z]$/.test(k)) res[k] = t;  // must be a single letter (key)
+    });
+  });
+  d.body.setAttribute('data-at-shortcutkeys', JSON.stringify(res));
+})(document);
+(function() {
+  "use strict"
+  // Replace <script> tags in slides area to make them executable
+  var scripts = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container script'
+  );
+  if (!scripts.length) return;
+  for (var i = 0; i < scripts.length; i++) {
+    var s = document.createElement('script');
+    var code = document.createTextNode(scripts[i].textContent);
+    s.appendChild(code);
+    var scriptAttrs = scripts[i].attributes;
+    for (var j = 0; j < scriptAttrs.length; j++) {
+      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
+    }
+    scripts[i].parentElement.replaceChild(s, scripts[i]);
+  }
+})();
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+// adds .remark-code-has-line-highlighted class to <pre> parent elements
+// of code chunks containing highlighted lines with class .remark-code-line-highlighted
+(function(d) {
+  const hlines = d.querySelectorAll('.remark-code-line-highlighted');
+  const preParents = [];
+  const findPreParent = function(line, p = 0) {
+    if (p > 1) return null; // traverse up no further than grandparent
+    const el = line.parentElement;
+    return el.tagName === "PRE" ? el : findPreParent(el, ++p);
+  };
+
+  for (let line of hlines) {
+    let pre = findPreParent(line);
+    if (pre && !preParents.includes(pre)) preParents.push(pre);
+  }
+  preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
+})(document);</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>

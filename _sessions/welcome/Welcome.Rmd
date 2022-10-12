@@ -1,0 +1,277 @@
+---
+title: "Welcome!"
+author: "R for Data Science<br>
+  <a href='https://therbootcamp.github.io'>
+    <font style='font-size:1em'>The R Bootcamp @ Psych</font>
+  </a>
+  <br>
+  <a href='https://therbootcamp.github.io/R4DS_2022Oct/'>
+    <i class='fas fa-clock' style='font-size:1em;'></i>
+  </a>&#8239; 
+  <a href='https://therbootcamp.github.io'>
+    <i class='fas fa-home' style='font-size:1em;' ></i>
+  </a>&#8239;
+  <a href='therbootcamp@gmail.com'>
+    <i class='fas fa-envelope' style='font-size: 1em;'></i>
+  </a>&#8239;
+  <a href='https://www.linkedin.com/company/27090302'>
+    <i class='fab fa-linkedin' style='font-size: 1em;'></i>
+  </a>"
+date: "October 2022"
+output:
+  xaringan::moon_reader:
+    css: ["default", "baselrbootcamp.css"]
+    lib_dir: libs
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+      ratio: '16:9'
+---
+
+layout: true
+
+<div class="my-footer">
+  <span style="text-align:center">
+    <span> 
+      <img src="https://raw.githubusercontent.com/therbootcamp/therbootcamp.github.io/master/_sessions/_image/by-sa.png" height=14 style="vertical-align: middle"/>
+    </span>
+    <a href="https://therbootcamp.github.io/">
+      <span style="padding-left:82px"> 
+        <font color="#7E7E7E">
+          https://therbootcamp.github.io
+        </font>
+      </span>
+    </a>
+    <a href="https://therbootcamp.github.io/">
+      <font color="#7E7E7E">
+      R for Data Science | October 2022
+      </font>
+    </a>
+    </span>
+  </div> 
+
+---
+
+
+```{r setup, include=FALSE}
+options(htmltools.dir.version = FALSE)
+options(width=110)
+options(digits = 4)
+
+knitr::opts_chunk$set(fig.align = 'center')
+```
+
+<!---
+
+.pull-left45[
+<br><br><br><br><br>
+# Materialien
+
+Klicke auf <high>"....running..."</high> auf unserer Website!
+
+<font style="font-size:28px"><a href="www.therbootcamp.com"><b>www.therbootcamp.com</b></a></font>
+
+]
+
+.pull-right5[
+
+<br><br>
+<iframe src="https://therbootcamp.github.io" width="500" height="500"></iframe>
+
+]
+
+--->
+
+.pull-left6[
+
+<br><br><br><br><br>
+
+
+# Goal
+
+
+>### The goal of this workshop is to introduce you to R's tools for data visualization and communication and how they can be used to effectively communicate insights from data!
+
+]
+
+.pull-right4[
+
+<br><br><br><br>
+<p align="center"><img src="https://raw.githubusercontent.com/therbootcamp/therbootcamp.github.io/master/_sessions/_image/target.png" height="350"></p>
+
+]
+
+
+---
+
+.pull-left45[
+
+<br>
+# Schedule 
+
+<ul>
+  <li class="m1"><span>Core of the workshop consists of 6 sessions on R. Each session is structured into:</span></li>
+  <ul class="level">
+    <li><span>30-60min introduction</high></span></li> 
+    <li><span>30-60min coding exercises</span></li> 
+    <li><span>5-10min Q&A</span></li> 
+  </ul>
+  <li class="m2"><span>Additional sessions & afternoon assignments to advance your visualization project.</span></li>
+</ul>
+
+]
+
+.pull-right5[
+<br><br><br>
+<img src="image/schedule.png" align="center" style="padding-top:16px">
+
+]
+
+---
+
+.pull-left3[
+
+# Inequality in Basel
+
+<font style="font-size:28px"><high><i class="far fa-question-circle"></i></high> How has the distribution of income and wealth changed within and between Basel's quarters from 2001 and 2017?</i></font>
+
+<br>
+
+<p align="center">
+<img src="image/basel_open_data.png" height=220px>
+</p>
+
+]
+
+.pull-right6[
+
+<br>
+
+<p align="center">
+<img src="image/quarters.png" height=540px>
+</p>
+
+]
+
+---
+
+.pull-left3[
+
+# Inequality in Basel
+
+<font style="font-size:28px"><high><i class="far fa-question-circle"></i></high> How has the distribution of income and wealth changed within and between Basel's quarters from 2001 and 2017?</i></font>
+
+<br>
+
+<p align="center">
+<img src="image/basel_open_data.png" height=220px>
+</p>
+
+]
+
+.pull-right6[
+
+<br>
+
+<p align="center">
+<img src="image/data.png" height=540px>
+</p>
+
+]
+
+
+
+
+---
+
+.pull-left3[
+
+# Mean, Median, Gini
+
+<ul>
+  <li class="m1"><span>Inequality arising from a <high>rich-get-richer</high> dynamic materializes as an increasingly right-skewed income distribution.</span></li><br>
+  <li class="m2"><span>This can be detected:</span></li><br>
+  <ul class="level">
+    <li><span><high>Mean</high> income grows faster than <high>median</high> income.</span></li><br>
+    <li><span>The <high>Gini</high> coefficient goes up.</span></li>
+  </ul>
+</ul>
+
+]
+
+
+.pull-right65[
+<br>
+<p align="center">
+<img src="image/distr.gif" width="360px"><br>
+<img src="image/gini.gif" width="360px">
+</p>
+]
+
+---
+
+.pull-left3[
+
+# Mean, Median, Gini
+
+<ul>
+  <li class="m1"><span>Inequality arising from a <high>rich-get-richer</high> dynamic materializes as an increasingly right-skewed income distribution.</span></li><br>
+  <li class="m2"><span>This can be detected:</span></li><br>
+  <ul class="level">
+    <li><span><high>Mean</high> income grows faster than <high>median</high> income.</span></li><br>
+    <li><span>The <high>Gini</high> coefficient goes up.</span></li>
+  </ul>
+</ul>
+
+]
+
+
+.pull-right65[
+<br>
+<p align="center">
+<img src="image/distr.gif" width="360px"><br>
+<img src="image/gini.gif" width="360px">
+</p>
+]
+
+
+---
+
+# Introductions
+
+.pull-left35[
+
+<ul>
+  <li class="m1"><span>What is your name?</span></li><br>
+  <li class="m2"><span>Where are you from?</span></li><br>
+  <li class="m3"><span>How much experience do you have with R?</span></li><br>
+  <li class="m4"><span>What is your goal behind wanting to learn data visualization with R?</span></li>
+</ul>
+
+]
+
+.pull-right55[
+
+<p align="center">
+<img src="image/hello.jpg">
+<br>
+<font style="font-size:10px">from <a href="https://unsplash.com/photos/3MYvgsH1uK0">unsplash.com</a></font>
+</p>
+
+]
+
+---
+
+class: middle, center
+
+<h1><a href="https://www.dropbox.com/s/siwk0mqzr3dofc5/TheRBootcamp.zip?dl=1">Download<br>project</a></h1>
+
+
+---
+
+class: middle, center
+
+<h1><a href="https://therbootcamp.github.io/DataViz_2022GSERM/">Schedule</a></h1>
+
+
