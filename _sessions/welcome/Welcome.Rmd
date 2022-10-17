@@ -245,7 +245,7 @@ Klicke auf <high>"....running..."</high> auf unserer Website!
   <li class="m1"><span>What is your name?</span></li><br>
   <li class="m2"><span>Where are you from?</span></li><br>
   <li class="m3"><span>How much experience do you have with R?</span></li><br>
-  <li class="m4"><span>What is your goal behind wanting to learn data visualization with R?</span></li>
+  <li class="m4"><span>What is your goal behind wanting to learn more about R?</span></li>
 </ul>
 
 ]
